@@ -18,6 +18,8 @@ class ShortcodeStorageTablePlugin extends Omeka_Plugin_AbstractPlugin
     public static function storagetable($args, $view)
     {
         static $id_suffix = 0;
+        
+        $params = array();
        
         if (isset($args['ids'])) {
             $params['range'] = $args['ids'];
@@ -44,8 +46,8 @@ class ShortcodeStorageTablePlugin extends Omeka_Plugin_AbstractPlugin
         } else {
             $limit = 10;
         }
-
-		$params['hasImage'] = 1;
+        
+        $params['hasImage'] = 1;
         $items = get_records('Item', $params, $limit);
 
         $html = $view->partial('storage_table.php', array('items' => $items, 'id_suffix' => $id_suffix, 'params' => $args));
