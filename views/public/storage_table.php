@@ -6,7 +6,7 @@
                     <td>Title</td>
                     <td>Description</td>
                 </tr>
-                <?php foreach($items as $item): ?>
+                <?php foreach (loop ($items) as $item): ?>
                     <tr>
                     <td>
                         <?php if (metadata('item', array('Item Type Metadata', 'Storage Location')) !='') {
