@@ -2,11 +2,17 @@
 
         class ShortcodeStorageTablePlugin extends Omeka_Plugin_AbstractPlugin
         {
-
+            protected $_hooks = array('public_head');
+            
             public function setUp()
             {
                 add_shortcode('storagetable', array('ShortcodeStorageTablePlugin', 'storagetable'));
                 parent::setUp();
+            }
+
+            public function hookPublicHead($args)
+            {
+                queue_css_file('storagetable');
             }
 
              /**

@@ -1,11 +1,11 @@
-        <div>
+        <div class="storagetable">
             <table>
             <tbody>
                 <tr>
-                    <td>Storage Location</td>
-                    <td>Identifier</td>
-                    <td>Title</td>
-                    <td>Description</td>
+                    <th>Storage Location</td>
+                    <th>Identifier</td>
+                    <th>Title</td>
+                    <th>Description</td>
                 </tr>
                 <?php set_loop_records('items', $items);
                     foreach (loop ('items') as $item): ?>
@@ -27,7 +27,7 @@
                     </td>
                     <td>
                         <?php if (metadata('item', array('Dublin Core', 'Description')) !='') {
-                            echo metadata('item', array('Dublin Core', 'Description'));
+                            echo metadata('item', array('Dublin Core', 'Description'), array('snippet' => 150));
                             } ?>
                     </td>
                     </tr>

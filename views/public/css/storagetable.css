@@ -1,0 +1,15 @@
+.storagetable th {
+    border: 5px solid;
+    padding-bottom: 5px;
+    vertical-align: bottom;
+}
+
+.storagetable td {
+    border: 1px solid;
+    vertical-align: top;
+}
+
+.storagetable td, th {
+    text-align: left;
+    padding: 6px;
+}
